@@ -17,6 +17,9 @@ jobs:
 
       - name: Build Lambda packages
         run: |
+          apt-get update
+          apt-get install awscli
+          npm install -g pnpm
 
           echo "Bulding Lambda."
                    
