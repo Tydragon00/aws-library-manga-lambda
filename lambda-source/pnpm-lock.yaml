@@ -1,0 +1,13 @@
+lockfileVersion: 5.4
+
+specifiers:
+  lambda-api: ^0.11.2
+
+dependencies:
+  lambda-api: 0.11.2
+
+packages:
+
+  /lambda-api/0.11.2:
+    resolution: {integrity: sha512-4LPthd9sg3RdeNul+vz7XDmjqR/RW+Mr+4w857IgVcdcl5UqDzZbK+fxB7dH7HYQoERIusXuzUU/bolZed+agw==}
+    dev: false
