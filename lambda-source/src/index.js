@@ -1,9 +1,16 @@
-exports.handler = async function (event, context) {
-    let jsonResponse = { "test": "hello world test logging" }
-    console.log(jsonResponse)
-    const response = {
-        statusCode: 200,
-        body: JSON.stringify(jsonResponse),
-    };
-    return response;
-}
+/* 
+ * --LIBRARY MANGA LAMBDA HANDLER --
+ *
+ * TRIGGERS: 
+ *  - APIGateway /products [ANY]
+ */
+
+'use strict';
+
+const api = require('lambda-api')();
+api.register(require('./endpoints'))
+
+exports.handler = async (event, context) => {
+    console.log({ event });
+    return await api.run(event, context);
+};
