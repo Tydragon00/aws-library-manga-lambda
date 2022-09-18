@@ -2,7 +2,7 @@
  * --LIBRARY MANGA LAMBDA HANDLER --
  *
  * TRIGGERS: 
- *  - APIGateway /products [ANY]
+ *  - APIGateway /library-manga [ANY]
  */
 
 'use strict';
