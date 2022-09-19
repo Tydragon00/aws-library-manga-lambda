@@ -30,7 +30,7 @@ module.exports = (api, opts) => {
             Item: item
         };
         try {
-            let data = await documentClient.putItem(params).promise();
+            let data = await documentClient.put(params).promise();
             return (JSON.stringify(data.Attributes));
 
         } catch (err) {
