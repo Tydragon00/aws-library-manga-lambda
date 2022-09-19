@@ -23,7 +23,7 @@ module.exports = (api, opts) => {
         return responseBody;
 
     });
-    api.post('/products/sell-products', async (req, res) => {
+    api.post('/library-manga/add', async (req, res) => {
         let item = req.body;
         let params = {
             TableName: tableName,
