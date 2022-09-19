@@ -25,6 +25,8 @@ module.exports = (api, opts) => {
     });
     api.post('/library-manga/add', async (req, res) => {
         let item = req.body;
+        console.log("TEST!")
+        console.log(item);
         let params = {
             TableName: tableName,
             Item: item
