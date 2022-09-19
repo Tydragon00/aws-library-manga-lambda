@@ -1,5 +1,6 @@
 const AWS = require('aws-sdk');
 const documentClient = new AWS.DynamoDB.DocumentClient();
+const tableName = "library-manga-db"
 
 module.exports = (api, opts) => {
     api.get('/library-manga/test', async (req, res) => {
@@ -9,7 +10,7 @@ module.exports = (api, opts) => {
     });
     api.get('/library-manga/all', async (req, res) => {
         let params = {
-            TableName: "library-manga-db"
+            TableName: tableName
         };
         try {
             data = await documentClient.scan(params).promise();
@@ -21,5 +22,22 @@ module.exports = (api, opts) => {
         }
         return responseBody;
 
+    });
+    api.post('/library-manga/add', async (req, res) => {
+        let item = req.body;
+        console.log("TEST!")
+        console.log(item);
+        let params = {
+            TableName: tableName,
+            Item: item
+        };
+        try {
+            let data = await documentClient.put(params).promise();
+            return (JSON.stringify(data));
+
+        } catch (err) {
+            console.log({ err })
+            res.status(503).send(`Unable to create item`)
+        }
     });
 }
