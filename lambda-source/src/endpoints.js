@@ -33,7 +33,7 @@ module.exports = (api, opts) => {
         };
         try {
             let data = await documentClient.put(params).promise();
-            return (JSON.stringify(data.Attributes));
+            return (JSON.stringify(data));
 
         } catch (err) {
             console.log({ err })
